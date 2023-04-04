@@ -2,11 +2,16 @@ import musicUrl from "../assets/stardust.mp3";
 
 type WS4000Props = {
   currentConditions: {
-    temperature: string;
-    dew_point: string;
-    wind_speed: number;
-    wind_direction: number;
-    wind_gust?: string;
+    temperature?: any;
+    dew_point?: any;
+    wind_speed?: number;
+    wind_direction?: number;
+    wind_gust?: string | undefined;
+    text_description?: any;
+    barometric_pressure?: any;
+    heat_index?: any;
+    wind_chill?: any;
+    visibility?: any;
   };
 };
 
