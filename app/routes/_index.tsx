@@ -1,4 +1,4 @@
-import { V2_MetaFunction, LoaderArgs, json } from "@remix-run/node";
+import { V2_MetaFunction, json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import React, { useState } from "react";
 import WS4000 from "~/components/WS4000";
@@ -8,7 +8,7 @@ export const meta: V2_MetaFunction = () => {
   return [{ title: "New Remix App" }];
 };
 
-export async function loader(args: LoaderArgs) {
+export async function loader() {
   const currect_conditions = await get_current_conditions();
   return json({
     currentConditions: currect_conditions,
@@ -38,7 +38,7 @@ export default function Index() {
           <button onClick={onCloseOverlay}>Start!</button>
         </Overlay>
       ) : (
-        <WS4000 data={weatherStarData} />
+        <WS4000 currentConditions={{ ...weatherStarData.currentConditions }} />
       )}
     </div>
   );

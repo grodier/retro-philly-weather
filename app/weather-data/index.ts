@@ -13,7 +13,8 @@ export async function get_current_conditions() {
   ).toString();
   const wind_speed: number = data.properties.windSpeed.value;
   const wind_direction: number = data.properties.windDirection.value;
-  const wind_gust = data.properties.windGust.value && "GUSTY";
+  const wind_gust: undefined | string =
+    data.properties.windGust.value && "GUSTY";
 
   return {
     temperature,
