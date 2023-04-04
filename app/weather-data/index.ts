@@ -1,4 +1,10 @@
-import { celcius_to_farenheit, pascal_to_inches_hg } from "./utils";
+import {
+  celcius_to_farenheit,
+  degress_to_compass_direction,
+  kph_to_mph,
+  meter_to_mile,
+  pascal_to_inches_hg,
+} from "./utils";
 
 export async function get_current_conditions() {
   const response = await fetch(
@@ -6,25 +12,43 @@ export async function get_current_conditions() {
   );
   const data = await response.json();
 
-  const temperature =
+  const temperature: undefined | string =
     data.properties.temperature.value &&
     celcius_to_farenheit(data.properties.temperature.value).toString();
 
-  const dew_point =
+  const dew_point: undefined | string =
     data.properties.dewpoint.value &&
     celcius_to_farenheit(data.properties.dewpoint.value).toString();
 
-  const wind_speed: number = data.properties.windSpeed.value;
-  const wind_direction: number = data.properties.windDirection.value;
+  const wind_speed: undefined | string =
+    data.properties.windSpeed.value &&
+    kph_to_mph(data.properties.windSpeed.value);
+
+  const wind_direction: undefined | string =
+    data.properties.windDirection.value &&
+    degress_to_compass_direction(data.properties.windDirection.value);
+
   const wind_gust: undefined | string =
-    data.properties.windGust.value && "GUSTY";
-  const visibility = data.properties.visibility.value;
-  const wind_chill = data.properties.windChill.value;
-  const heat_index = data.properties.heatIndex.value;
-  const barometric_pressure =
-    data.properties.barometric_pressure.value &&
-    pascal_to_inches_hg(data.properties.barometric_pressure.value).toString();
-  const text_description = data.properties.textDescription;
+    data.properties.windGust.value &&
+    kph_to_mph(data.properties.windGust.value);
+
+  const visibility: undefined | string =
+    data.properties.visibility.value &&
+    meter_to_mile(data.properties.visibility.value);
+
+  const wind_chill: undefined | string =
+    data.properties.windChill.value &&
+    celcius_to_farenheit(data.properties.windChill.value);
+
+  const heat_index: undefined | string =
+    data.properties.heatIndex.value &&
+    celcius_to_farenheit(data.properties.heatIndex.value);
+
+  const barometric_pressure: undefined | string =
+    data.properties.barometricPressure.value &&
+    pascal_to_inches_hg(data.properties.barometricPressure.value).toString();
+
+  const text_description: undefined | string = data.properties.textDescription;
 
   return {
     temperature,

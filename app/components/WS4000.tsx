@@ -2,28 +2,42 @@ import musicUrl from "../assets/stardust.mp3";
 
 type WS4000Props = {
   currentConditions: {
-    temperature?: any;
-    dew_point?: any;
-    wind_speed?: number;
-    wind_direction?: number;
-    wind_gust?: string | undefined;
-    text_description?: any;
-    barometric_pressure?: any;
-    heat_index?: any;
-    wind_chill?: any;
-    visibility?: any;
+    temperature?: string;
+    dew_point?: string;
+    wind_speed?: string;
+    wind_direction?: string;
+    wind_gust?: string;
+    text_description?: string;
+    barometric_pressure?: string;
+    heat_index?: string;
+    wind_chill?: string;
+    visibility?: string;
   };
 };
 
 export default function WS4000({ currentConditions }: WS4000Props) {
   return (
     <div>
-      <div>Temp: {currentConditions.temperature}</div>
-      <div>Dew Point: {currentConditions.dew_point}</div>
-      {currentConditions.wind_gust && (
+      <ConditionalDisplay value={currentConditions.temperature}>
+        <div>Temp: {currentConditions.temperature}</div>
+      </ConditionalDisplay>
+      <ConditionalDisplay value={currentConditions.wind_gust}>
         <div>Wind Gusts: {currentConditions.wind_gust}</div>
-      )}
+      </ConditionalDisplay>
+      <ConditionalDisplay value={currentConditions.dew_point}>
+        <div>Dew Point: {currentConditions.dew_point}</div>
+      </ConditionalDisplay>
+
       <audio autoPlay loop src={musicUrl} />
     </div>
   );
+}
+
+type ConditionalDisplayProps = {
+  value: unknown;
+  children: React.ReactNode;
+};
+
+function ConditionalDisplay({ value, children }: ConditionalDisplayProps) {
+  return value ? <>{children}</> : null;
 }
