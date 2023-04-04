@@ -5,9 +5,21 @@ export async function get_current_conditions() {
     "https://api.weather.gov/stations/KPHL/observations/latest"
   );
   const data = await response.json();
+  const temperature = celcius_to_farenheit(
+    data.properties.temperature.value
+  ).toString();
+  const dew_point = celcius_to_farenheit(
+    data.properties.dewpoint.value
+  ).toString();
+  const wind_speed: number = data.properties.windSpeed.value;
+  const wind_direction: number = data.properties.windDirection.value;
+  const wind_gust = data.properties.windGust.value && "GUSTY";
+
   return {
-    temperature: celcius_to_farenheit(
-      data.properties.temperature.value
-    ).toString(),
+    temperature,
+    dew_point,
+    wind_speed,
+    wind_direction,
+    wind_gust,
   };
 }
