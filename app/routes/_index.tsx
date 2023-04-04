@@ -1,38 +1,35 @@
 import type { V2_MetaFunction } from "@remix-run/node";
+import React, { useState } from "react";
+import WS4000 from "~/components/WS4000";
 
 export const meta: V2_MetaFunction = () => {
   return [{ title: "New Remix App" }];
 };
 
+type OverlayProps = {
+  children: React.ReactNode;
+};
+
+function Overlay({ children }: OverlayProps) {
+  return <div>{children}</div>;
+}
+
 export default function Index() {
+  const [overlayVisible, setOverlayVisible] = useState(true);
+
+  function onCloseOverlay() {
+    setOverlayVisible(false);
+  }
+
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
+    <div style={{ fontFamily: "monospace, system-ui" }}>
+      {overlayVisible ? (
+        <Overlay>
+          <button onClick={onCloseOverlay}>Start!</button>
+        </Overlay>
+      ) : (
+        <WS4000 />
+      )}
     </div>
   );
 }
