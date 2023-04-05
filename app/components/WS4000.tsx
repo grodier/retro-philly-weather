@@ -19,13 +19,19 @@ export default function WS4000({ currentConditions }: WS4000Props) {
   return (
     <div>
       <ConditionalDisplay value={currentConditions.temperature}>
-        <div>Temp: {currentConditions.temperature}</div>
+        <div className="text-outline text-white text-lg">
+          Temp: {currentConditions.temperature}
+        </div>
       </ConditionalDisplay>
       <ConditionalDisplay value={currentConditions.wind_gust}>
-        <div>Wind Gusts: {currentConditions.wind_gust}</div>
+        <div className="text-outline text-white text-lg">
+          Wind Gusts: {currentConditions.wind_gust}
+        </div>
       </ConditionalDisplay>
       <ConditionalDisplay value={currentConditions.dew_point}>
-        <div>Dew Point: {currentConditions.dew_point}</div>
+        <div className="text-outline text-white text-lg">
+          Dew Point: {currentConditions.dew_point}
+        </div>
       </ConditionalDisplay>
 
       <audio autoPlay loop src={musicUrl} />

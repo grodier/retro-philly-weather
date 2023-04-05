@@ -32,7 +32,7 @@ export default function Index() {
   }
 
   return (
-    <div style={{ fontFamily: "monospace, system-ui" }}>
+    <div className="font-mono">
       {overlayVisible ? (
         <Overlay>
           <button onClick={onCloseOverlay}>Start!</button>
