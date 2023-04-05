@@ -12,3 +12,23 @@ body {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }
+
+.marquee-bg {
+  background-color: #2b365f;
+}
+
+.marquee {
+  overflow: hidden;
+  position: relative;
+  transform: translateX(100%);
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
