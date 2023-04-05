@@ -20,7 +20,7 @@ type OverlayProps = {
 };
 
 function Overlay({ children }: OverlayProps) {
-  return <div>{children}</div>;
+  return <div className="grid h-screen place-items-center">{children}</div>;
 }
 
 export default function Index() {
@@ -35,7 +35,13 @@ export default function Index() {
     <div className="font-mono">
       {overlayVisible ? (
         <Overlay>
-          <button onClick={onCloseOverlay}>Start!</button>
+          <button
+            className="bg-white bg-gradient-to-b from-blue-700 to-blue-300 text-outline text-white text-xl rounded-2xl p-2 border-4 border-white shadow-2xl shadow-black hover:shadow-xl hover:shadow-black active:shadow-sm active:shadow-black"
+            onClick={onCloseOverlay}
+          >
+            <p>Click for a Retro</p>
+            <p>Philly Weather Experience</p>
+          </button>
         </Overlay>
       ) : (
         <WS4000 currentConditions={{ ...weatherStarData.currentConditions }} />
