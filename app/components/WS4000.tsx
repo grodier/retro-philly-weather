@@ -74,7 +74,9 @@ export default function WS4000({ currentConditions }: WS4000Props) {
       </main>
       <footer className="sticky top-[100vh] marquee-bg text-outline text-white text-4xl py-1 h-20">
         <div className="marquee">
-          <p>Marquee</p>
+          <div className="marquee__inner">
+            <p>Marquee</p>
+          </div>
         </div>
       </footer>
     </div>

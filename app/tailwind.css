@@ -20,8 +20,16 @@ body {
 .marquee {
   overflow: hidden;
   position: relative;
-  transform: translateX(100%);
-  animation: marquee 10s linear infinite;
+}
+
+.marquee__inner {
+  position: relative;
+  animation: marquee 7s linear infinite;
+  animation-play-state: running;
+}
+
+.marquee:hover .marquee__inner {
+  animation-play-state: paused;
 }
 
 @keyframes marquee {
