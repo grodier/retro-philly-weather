@@ -20,8 +20,8 @@ export default function WS4000({ currentConditions }: WS4000Props) {
     <div className="min-h-screen flex flex-col relative">
       <audio autoPlay loop src={musicUrl} />
       <header className="py-11">Retro Philly Weather</header>
-      <main className="flex-grow bg-blue-400 container mx-auto px-10">
-        <div className="">
+      <main className="flex-grow container-bg container mx-auto px-10">
+        <div className="py-2">
           <ConditionalDisplay value={currentConditions.text_description}>
             <div className="text-outline text-white text-4xl">
               {currentConditions.text_description}
