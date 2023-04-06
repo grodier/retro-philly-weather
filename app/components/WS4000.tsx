@@ -75,7 +75,10 @@ export default function WS4000({ currentConditions }: WS4000Props) {
       <footer className="sticky top-[100vh] marquee-bg text-outline text-white text-4xl py-1 h-20">
         <div className="marquee">
           <div className="marquee__inner">
-            <p>Marquee</p>
+            <p className="uppercase whitespace-nowrap">
+              A site fueled by nostalgia and created with love by George Rodier
+              - <a href="https://georgerodier.com">georgerodier.com</a>
+            </p>
           </div>
         </div>
       </footer>
