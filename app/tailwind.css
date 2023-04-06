@@ -13,6 +13,11 @@ body {
     1px 1px 0 #000;
 }
 
+.text-outline-3d {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000, 8px 4px #000;
+}
+
 .marquee-bg {
   background-color: #2b365f;
 }
@@ -26,7 +31,7 @@ body {
   width: fit-content;
   display: flex;
   position: relative;
-  animation: marquee 9s linear infinite;
+  animation: marquee 12s linear infinite;
   animation-play-state: running;
 }
 
