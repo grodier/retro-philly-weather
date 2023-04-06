@@ -17,11 +17,11 @@ type WS4000Props = {
 
 export default function WS4000({ currentConditions }: WS4000Props) {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col relative">
       <audio autoPlay loop src={musicUrl} />
-      <header></header>
-      <main>
-        <div className="bg-blue-400 container mx-auto px-10">
+      <header className="py-11">Retro Philly Weather</header>
+      <main className="flex-grow bg-blue-400 container mx-auto px-10">
+        <div className="">
           <ConditionalDisplay value={currentConditions.text_description}>
             <div className="text-outline text-white text-4xl">
               {currentConditions.text_description}
@@ -74,7 +74,7 @@ export default function WS4000({ currentConditions }: WS4000Props) {
           </ConditionalDisplay>
         </div>
       </main>
-      <footer className="sticky top-[100vh] marquee-bg text-outline text-white text-4xl py-1 h-20">
+      <footer className="marquee-bg mt-auto text-outline text-white text-4xl py-1 h-20">
         <div className="marquee">
           <div className="marquee__inner">
             <p className="uppercase whitespace-nowrap">
