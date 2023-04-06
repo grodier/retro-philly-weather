@@ -21,56 +21,58 @@ export default function WS4000({ currentConditions }: WS4000Props) {
       <audio autoPlay loop src={musicUrl} />
       <header></header>
       <main>
-        <ConditionalDisplay value={currentConditions.text_description}>
-          <div className="text-outline text-white text-4xl">
-            {currentConditions.text_description}
-          </div>
-        </ConditionalDisplay>
-        <ConditionalDisplay value={currentConditions.temperature}>
-          <div className="text-outline text-white text-lg">
-            Temerature: {currentConditions.temperature}
-          </div>
-        </ConditionalDisplay>
-        <ConditionalDisplay value={currentConditions.dew_point}>
-          <div className="text-outline text-white text-lg">
-            Dew Point: {currentConditions.dew_point}
-          </div>
-        </ConditionalDisplay>
-        <ConditionalDisplay value={currentConditions.wind_speed}>
-          <div className="text-outline text-white text-lg">
-            Wind Speed: {currentConditions.wind_speed}
-          </div>
-        </ConditionalDisplay>
-        <ConditionalDisplay value={currentConditions.wind_direction}>
-          <div className="text-outline text-white text-lg">
-            Wind Direction: {currentConditions.wind_direction}
-          </div>
-        </ConditionalDisplay>
-        <ConditionalDisplay value={currentConditions.wind_gust}>
-          <div className="text-outline text-white text-lg">
-            Wind Gusts: {currentConditions.wind_gust}
-          </div>
-        </ConditionalDisplay>
-        <ConditionalDisplay value={currentConditions.barometric_pressure}>
-          <div className="text-outline text-white text-lg">
-            Barometric Pressure: {currentConditions.barometric_pressure}
-          </div>
-        </ConditionalDisplay>
-        <ConditionalDisplay value={currentConditions.heat_index}>
-          <div className="text-outline text-white text-lg">
-            Heat Index: {currentConditions.heat_index}
-          </div>
-        </ConditionalDisplay>
-        <ConditionalDisplay value={currentConditions.wind_chill}>
-          <div className="text-outline text-white text-lg">
-            Wind Chill: {currentConditions.wind_chill}
-          </div>
-        </ConditionalDisplay>
-        <ConditionalDisplay value={currentConditions.visibility}>
-          <div className="text-outline text-white text-lg">
-            Visibility: {currentConditions.visibility}
-          </div>
-        </ConditionalDisplay>
+        <div className="bg-blue-400 container mx-auto px-10">
+          <ConditionalDisplay value={currentConditions.text_description}>
+            <div className="text-outline text-white text-4xl">
+              {currentConditions.text_description}
+            </div>
+          </ConditionalDisplay>
+          <ConditionalDisplay value={currentConditions.temperature}>
+            <div className="text-outline text-white text-lg">
+              Temerature: {currentConditions.temperature}
+            </div>
+          </ConditionalDisplay>
+          <ConditionalDisplay value={currentConditions.dew_point}>
+            <div className="text-outline text-white text-lg">
+              Dew Point: {currentConditions.dew_point}
+            </div>
+          </ConditionalDisplay>
+          <ConditionalDisplay value={currentConditions.wind_speed}>
+            <div className="text-outline text-white text-lg">
+              Wind Speed: {currentConditions.wind_speed}
+            </div>
+          </ConditionalDisplay>
+          <ConditionalDisplay value={currentConditions.wind_direction}>
+            <div className="text-outline text-white text-lg">
+              Wind Direction: {currentConditions.wind_direction}
+            </div>
+          </ConditionalDisplay>
+          <ConditionalDisplay value={currentConditions.wind_gust}>
+            <div className="text-outline text-white text-lg">
+              Wind Gusts: {currentConditions.wind_gust}
+            </div>
+          </ConditionalDisplay>
+          <ConditionalDisplay value={currentConditions.barometric_pressure}>
+            <div className="text-outline text-white text-lg">
+              Barometric Pressure: {currentConditions.barometric_pressure}
+            </div>
+          </ConditionalDisplay>
+          <ConditionalDisplay value={currentConditions.heat_index}>
+            <div className="text-outline text-white text-lg">
+              Heat Index: {currentConditions.heat_index}
+            </div>
+          </ConditionalDisplay>
+          <ConditionalDisplay value={currentConditions.wind_chill}>
+            <div className="text-outline text-white text-lg">
+              Wind Chill: {currentConditions.wind_chill}
+            </div>
+          </ConditionalDisplay>
+          <ConditionalDisplay value={currentConditions.visibility}>
+            <div className="text-outline text-white text-lg">
+              Visibility: {currentConditions.visibility}
+            </div>
+          </ConditionalDisplay>
+        </div>
       </main>
       <footer className="sticky top-[100vh] marquee-bg text-outline text-white text-4xl py-1 h-20">
         <div className="marquee">
