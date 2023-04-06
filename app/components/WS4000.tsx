@@ -74,7 +74,7 @@ export default function WS4000({ currentConditions }: WS4000Props) {
           </ConditionalDisplay>
         </div>
       </main>
-      <footer className="marquee-bg mt-auto text-outline text-white text-4xl py-1 h-20">
+      <footer className="marquee-bg footer-border mt-auto text-outline text-white text-4xl py-1 h-24">
         <div className="marquee">
           <div className="marquee__inner">
             <p className="uppercase whitespace-nowrap">
