@@ -1,4 +1,5 @@
 import musicUrl from "../assets/stardust.mp3";
+import { useLocalDate } from "./LocalDate";
 
 type WS4000Props = {
   currentConditions: {
@@ -13,10 +14,13 @@ type WS4000Props = {
     wind_chill?: string;
     visibility?: string;
     image_description?: string;
+    humidity?: string;
   };
 };
 
 export default function WS4000({ currentConditions }: WS4000Props) {
+  const date = useLocalDate();
+
   return (
     <div className="min-h-screen flex flex-col relative">
       <audio autoPlay loop src={musicUrl} />
@@ -33,6 +37,14 @@ export default function WS4000({ currentConditions }: WS4000Props) {
             <div className="flex flex-col text-6xl tracking-tighter text-outline-3d text-yellow-400">
               <span>Current</span>
               <span>Conditions</span>
+            </div>
+          </div>
+          <div className="flex-grow flex flex-col justify-end">
+            <div className="text-outline-3d-small text-white text-3xl text-right">
+              {date.time}
+            </div>
+            <div className="text-outline-3d-small text-white text-3xl text-right">
+              {date.abbreviatedDate}
             </div>
           </div>
         </div>
@@ -79,6 +91,11 @@ export default function WS4000({ currentConditions }: WS4000Props) {
               Philadelphia
             </div>
             <div className="flex flex-col justify-around pl-5 mt-6 space-y-6">
+              <ConditionalDisplay value={currentConditions.humidity}>
+                <div className="text-outline-3d-small text-white text-5xl">
+                  Humidity: {currentConditions.humidity}
+                </div>
+              </ConditionalDisplay>
               <ConditionalDisplay value={currentConditions.dew_point}>
                 <div className="text-outline-3d-small text-white text-5xl">
                   Dew Point: {currentConditions.dew_point}

@@ -65,6 +65,10 @@ export async function get_current_conditions() {
       { fixed: 2 }
     );
 
+  const humidity: undefined | string =
+    data.properties.relativeHumidity.value &&
+    createStringUnit(data.properties.relativeHumidity.value, { unit: "%" });
+
   const text_description: undefined | string = data.properties.textDescription;
 
   const image_description: undefined | string =
@@ -82,5 +86,6 @@ export async function get_current_conditions() {
     wind_chill,
     visibility,
     image_description,
+    humidity,
   };
 }
