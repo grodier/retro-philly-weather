@@ -36,3 +36,14 @@ export function kph_to_mph(kilometers_per_hour: number): number {
 export function meter_to_mile(meter: number): number {
   return meter / 1609;
 }
+
+type StringUnitOpts = {
+  unit?: string;
+  fixed?: number;
+};
+export function createStringUnit(
+  value: number,
+  { unit, fixed }: StringUnitOpts = {}
+): string {
+  return `${value.toFixed(fixed)}${unit || ""}`;
+}

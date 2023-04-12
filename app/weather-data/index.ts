@@ -4,6 +4,7 @@ import {
   kph_to_mph,
   meter_to_mile,
   pascal_to_inches_hg,
+  createStringUnit,
 } from "./utils";
 
 export async function get_current_conditions() {
@@ -14,15 +15,19 @@ export async function get_current_conditions() {
 
   const temperature: undefined | string =
     data.properties.temperature.value &&
-    celcius_to_farenheit(data.properties.temperature.value).toString();
+    createStringUnit(celcius_to_farenheit(data.properties.temperature.value), {
+      unit: "°",
+    });
 
   const dew_point: undefined | string =
     data.properties.dewpoint.value &&
-    celcius_to_farenheit(data.properties.dewpoint.value).toString();
+    createStringUnit(celcius_to_farenheit(data.properties.dewpoint.value), {
+      unit: "°",
+    });
 
   const wind_speed: undefined | string =
     data.properties.windSpeed.value &&
-    kph_to_mph(data.properties.windSpeed.value);
+    createStringUnit(kph_to_mph(data.properties.windSpeed.value));
 
   const wind_direction: undefined | string =
     data.properties.windDirection.value &&
@@ -30,23 +35,32 @@ export async function get_current_conditions() {
 
   const wind_gust: undefined | string =
     data.properties.windGust.value &&
-    kph_to_mph(data.properties.windGust.value);
+    createStringUnit(kph_to_mph(data.properties.windGust.value));
 
   const visibility: undefined | string =
     data.properties.visibility.value &&
-    meter_to_mile(data.properties.visibility.value);
+    createStringUnit(meter_to_mile(data.properties.visibility.value), {
+      unit: "mi.",
+    });
 
   const wind_chill: undefined | string =
     data.properties.windChill.value &&
-    celcius_to_farenheit(data.properties.windChill.value);
+    createStringUnit(celcius_to_farenheit(data.properties.windChill.value), {
+      unit: "°",
+    });
 
   const heat_index: undefined | string =
     data.properties.heatIndex.value &&
-    celcius_to_farenheit(data.properties.heatIndex.value);
+    createStringUnit(celcius_to_farenheit(data.properties.heatIndex.value), {
+      unit: "°",
+    });
 
   const barometric_pressure: undefined | string =
     data.properties.barometricPressure.value &&
-    pascal_to_inches_hg(data.properties.barometricPressure.value).toString();
+    createStringUnit(
+      pascal_to_inches_hg(data.properties.barometricPressure.value),
+      { fixed: 2 }
+    );
 
   const text_description: undefined | string = data.properties.textDescription;
 

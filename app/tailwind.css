@@ -18,6 +18,11 @@ body {
     1px 1px 0 #000, 8px 4px #000;
 }
 
+.text-outline-3d-small {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000, 4px 2px #000;
+}
+
 .marquee-bg {
   background-color: #2b365f;
 }
