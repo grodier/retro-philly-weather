@@ -14,6 +14,8 @@ export async function get_current_conditions() {
   );
   const data = await response.json();
 
+  console.log("Weather data:", data);
+
   const temperature: undefined | string =
     data.properties.temperature.value &&
     createStringUnit(celcius_to_farenheit(data.properties.temperature.value), {
