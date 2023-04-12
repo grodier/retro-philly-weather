@@ -12,6 +12,7 @@ type WS4000Props = {
     heat_index?: string;
     wind_chill?: string;
     visibility?: string;
+    image_description?: string;
   };
 };
 
@@ -42,6 +43,14 @@ export default function WS4000({ currentConditions }: WS4000Props) {
             <ConditionalDisplay value={currentConditions.text_description}>
               <div className="text-outline-3d-small text-white text-3xl">
                 {currentConditions.text_description}
+              </div>
+            </ConditionalDisplay>
+            <ConditionalDisplay value={currentConditions.image_description}>
+              <div>
+                <img
+                  src={currentConditions.image_description}
+                  alt={currentConditions.text_description}
+                />
               </div>
             </ConditionalDisplay>
             <ConditionalDisplay value={currentConditions.temperature}>

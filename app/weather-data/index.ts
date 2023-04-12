@@ -6,6 +6,7 @@ import {
   pascal_to_inches_hg,
   createStringUnit,
 } from "./utils";
+import { getDescriptionImage } from "./condition-image-map";
 
 export async function get_current_conditions() {
   const response = await fetch(
@@ -64,6 +65,9 @@ export async function get_current_conditions() {
 
   const text_description: undefined | string = data.properties.textDescription;
 
+  const image_description: undefined | string =
+    text_description && getDescriptionImage(text_description);
+
   return {
     temperature,
     dew_point,
@@ -75,5 +79,6 @@ export async function get_current_conditions() {
     heat_index,
     wind_chill,
     visibility,
+    image_description,
   };
 }
