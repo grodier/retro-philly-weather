@@ -52,15 +52,20 @@ export default function Index() {
                 <div className="flex flex-col uppercase items-center">Play</div>
               </button>
               <p className="text-sm text-center text-gray-700">
-                (Note: Player has sound. Options to disable sound and reduce
-                blur, and more info about this project coming in the future!)
+                (Note: For best retro experience consider using a laptop or
+                desktop. Player has sound. Options to disable sound and reduce
+                blur, improved mobile layout, and more info about this project
+                coming in the future!)
               </p>
             </div>
           </div>
         </div>
       </div>
       <div className={overlayVisible ? "blur" : ""}>
-        <WS4000 currentConditions={{ ...weatherStarData.currentConditions }} />
+        <WS4000
+          sound={!overlayVisible}
+          currentConditions={{ ...weatherStarData.currentConditions }}
+        />
       </div>
     </div>
   );

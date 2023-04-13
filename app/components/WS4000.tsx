@@ -2,6 +2,7 @@ import musicUrl from "../assets/stardust.mp3";
 import { useLocalDate } from "./LocalDate";
 
 type WS4000Props = {
+  sound: boolean;
   currentConditions: {
     temperature?: string;
     dew_point?: string;
@@ -18,12 +19,12 @@ type WS4000Props = {
   };
 };
 
-export default function WS4000({ currentConditions }: WS4000Props) {
+export default function WS4000({ sound, currentConditions }: WS4000Props) {
   const date = useLocalDate();
 
   return (
     <div className="min-h-screen flex flex-col relative">
-      <audio autoPlay loop src={musicUrl} />
+      <audio autoPlay muted={!sound} loop src={musicUrl} />
       <header className="pt-8 pb-2">
         <div className="container mx-auto flex">
           <div className="logo-expanded bg-white bg-gradient-to-b from-blue-800 to-blue-400 text-outline-3d-small text-white text-3xl font-bold rounded-2xl p-2 border-4 border-white inline-block">
