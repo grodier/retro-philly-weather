@@ -67,3 +67,7 @@ body {
   transform: scale(1.2);
   box-shadow: 3px 3px 4px #000;
 }
+
+.logo {
+  box-shadow: 3px 3px 4px #000;
+}
