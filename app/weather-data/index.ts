@@ -71,8 +71,11 @@ export async function get_current_conditions() {
 
   const text_description: undefined | string = data.properties.textDescription;
 
+  const hours = new Date().getHours();
+  const isDayTime = hours > 6 && hours < 20;
   const image_description: undefined | string =
-    text_description && getDescriptionImage(text_description);
+    text_description &&
+    getDescriptionImage(text_description, isDayTime ? "day" : "night");
 
   return {
     temperature,
