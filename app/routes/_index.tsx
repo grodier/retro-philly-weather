@@ -40,17 +40,21 @@ export default function Index() {
       >
         <div className="h-full flex justify-center items-center">
           <div className="overflow-hidden rounded-lg bg-white shadow max-w-2xl">
-            <div className="px-4 py-5 sm:p-6 flex flex-col">
-              <p>
+            <div className="px-4 py-5 sm:p-6 flex flex-col items-center space-y-8">
+              <p className="text-center text-lg">
                 Get ready to be transported back to the 90's where every 8
                 minutes offered a glimpse into what the day had to hold!
               </p>
               <button
-                className="logo bg-white bg-gradient-to-b from-blue-800 to-blue-400 hover:from-blue-900 hover:to-blue-500 active:from-blue-700 active:to-blue-300 text-outline-3d-small text-white text-3xl font-bold rounded-2xl p-2 border-4 border-white inline-block"
+                className="logo max-w-fit bg-white bg-gradient-to-b from-blue-800 to-blue-400 hover:from-blue-900 hover:to-blue-500 active:from-blue-700 active:to-blue-300 text-outline-3d-small text-white text-3xl font-bold rounded-2xl p-2 border-4 border-white inline-block"
                 onClick={onCloseOverlay}
               >
                 <div className="flex flex-col uppercase items-center">Play</div>
               </button>
+              <p className="text-sm text-center text-gray-700">
+                (Note: Player has sound. Options to disable sound and reduce
+                blur, and more info about this project coming in the future!)
+              </p>
             </div>
           </div>
         </div>
