@@ -34,18 +34,20 @@ export default function WS4000({ sound, currentConditions }: WS4000Props) {
               <span className="inline-block">Weather</span>
             </div>
           </div>
-          <div className="px-6 sm:px-8 inline-block">
-            <div className="flex flex-col text-4xl sm:text-5xl lg:text-6xl tracking-tighter text-outline-3d text-yellow-400">
-              <span>Current</span>
-              <span>Conditions</span>
+          <div className="flex">
+            <div className="px-6 sm:px-8 inline-block">
+              <div className="flex flex-col text-4xl sm:text-5xl lg:text-6xl tracking-tighter text-outline-3d text-yellow-400">
+                <span>Current</span>
+                <span>Conditions</span>
+              </div>
             </div>
-          </div>
-          <div className="flex-grow flex flex-col justify-end">
-            <div className="text-outline-3d-small text-white text-xl sm:text-2xl lg:text-3xl text-right">
-              {date.time}
-            </div>
-            <div className="text-outline-3d-small text-white text-xl sm:text-2xl lg:text-3xl text-right">
-              {date.abbreviatedDate}
+            <div className="flex-grow flex flex-col justify-end">
+              <div className="text-outline-3d-small text-white text-xl sm:text-2xl lg:text-3xl text-right">
+                {date.time}
+              </div>
+              <div className="text-outline-3d-small text-white text-xl sm:text-2xl lg:text-3xl text-right">
+                {date.abbreviatedDate}
+              </div>
             </div>
           </div>
         </div>
