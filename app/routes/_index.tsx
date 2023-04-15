@@ -54,8 +54,7 @@ export default function Index() {
               <p className="text-sm text-center text-gray-700">
                 (Note: For best retro experience consider using a laptop or
                 desktop. Player has sound. Options to disable sound and reduce
-                blur, improved mobile layout, and more info about this project
-                coming in the future!)
+                blur, and more info about this project coming in the future!)
               </p>
             </div>
           </div>
