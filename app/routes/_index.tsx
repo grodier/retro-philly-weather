@@ -1,11 +1,11 @@
 import { V2_MetaFunction, json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import React, { useState } from "react";
+import { useState } from "react";
 import WS4000 from "~/components/WS4000";
 import { get_current_conditions } from "~/weather-data";
 
 export const meta: V2_MetaFunction = () => {
-  return [{ title: "New Remix App" }];
+  return [{ title: "Retro Philly Weather" }];
 };
 
 export async function loader() {
@@ -13,14 +13,6 @@ export async function loader() {
   return json({
     currentConditions: currect_conditions,
   });
-}
-
-type OverlayProps = {
-  children: React.ReactNode;
-};
-
-function Overlay({ children }: OverlayProps) {
-  return <div className="grid h-screen place-items-center">{children}</div>;
 }
 
 export default function Index() {
