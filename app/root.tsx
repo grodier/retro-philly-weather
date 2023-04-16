@@ -10,6 +10,7 @@ import {
 import type { LinksFunction } from "@remix-run/node";
 
 import styles from "./tailwind.css";
+import { SettingsProvider } from "./components/SettingsProvider";
 
 export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
@@ -23,7 +24,9 @@ export default function App() {
         <Links />
       </head>
       <body className="h-full">
-        <Outlet />
+        <SettingsProvider>
+          <Outlet />
+        </SettingsProvider>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
