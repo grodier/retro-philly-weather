@@ -26,7 +26,7 @@ export default function WS4000({ sound, currentConditions }: WS4000Props) {
     <div className="min-h-screen flex flex-col relative">
       <audio autoPlay muted={!sound} loop src={musicUrl} />
       <header className="pt-8 pb-2 px-4 sm:px-8">
-        <div className="container mx-auto flex flex-wrap-reverse">
+        <div className="container mx-auto flex flex-wrap-reverse sm:flex-nowrap">
           <div className="logo-expanded bg-white bg-gradient-to-b from-blue-800 to-blue-400 text-outline-3d-small text-white text-xl sm:text-2xl lg:text-3xl font-bold rounded-2xl p-2 border-2 sm:border-4 border-white inline-block">
             <div className="flex flex-col justify-center uppercase items-center">
               <span className="inline-block">Retro</span>
@@ -34,7 +34,7 @@ export default function WS4000({ sound, currentConditions }: WS4000Props) {
               <span className="inline-block">Weather</span>
             </div>
           </div>
-          <div className="flex">
+          <div className="flex justify-between w-full">
             <div className="px-6 sm:px-8 inline-block">
               <div className="flex flex-col text-4xl sm:text-5xl lg:text-6xl tracking-tighter text-outline-3d text-yellow-400">
                 <span>Current</span>
