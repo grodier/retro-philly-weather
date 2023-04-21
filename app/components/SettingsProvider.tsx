@@ -38,6 +38,8 @@ function settingsReducer(
     }
     case SettingsActions.TOGGLE_BLUR: {
       const blurEnabled = state.blur === "ENABLED";
+      const blurVal = blurEnabled ? "0px" : "1px";
+      document.documentElement.style.setProperty("--blur-val", blurVal);
       return { ...state, blur: blurEnabled ? "DISABLED" : "ENABLED" };
     }
     case SettingsActions.START_PLAYER: {

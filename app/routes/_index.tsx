@@ -1,5 +1,5 @@
 import { V2_MetaFunction, json } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import { useLoaderData, Link } from "@remix-run/react";
 import { useState } from "react";
 import { useSettings } from "~/components/SettingsProvider";
 import WS4000 from "~/components/WS4000";
@@ -41,11 +41,19 @@ export default function Index() {
               >
                 <div className="flex flex-col uppercase items-center">Play</div>
               </button>
-              <p className="text-sm text-center text-gray-700">
-                (Note: For best retro experience consider using a laptop or
-                desktop. Player has sound. Options to disable sound and reduce
-                blur, and more info about this project coming in the future!)
-              </p>
+              <div className="flex flex-col items-center space-y-2">
+                <p className="text-sm text-center text-gray-700">
+                  (Note: For best retro experience consider using a laptop or
+                  desktop. Check out the settings to turn off audio or reduce
+                  blur)
+                </p>
+                <Link
+                  className="font-semibold text-blue-800 hover:text-indigo-600 underline"
+                  to="/settings"
+                >
+                  Settings
+                </Link>
+              </div>
             </div>
           </div>
         </div>
