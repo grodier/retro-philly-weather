@@ -44,7 +44,6 @@ function settingsReducer(
     case SettingsActions.TOGGLE_BLUR: {
       const updatedBlur = state.blur === "ENABLED" ? "DISABLED" : "ENABLED";
       localStorage.setItem("RPW_BLUR", updatedBlur);
-      setDocumentBlurValue(updatedBlur);
       return { ...state, blur: updatedBlur };
     }
     case SettingsActions.START_PLAYER: {
@@ -53,11 +52,6 @@ function settingsReducer(
     default:
       return state;
   }
-}
-
-function setDocumentBlurValue(blur: BlurState) {
-  const blurVal = blur === "ENABLED" ? "1px" : "0px";
-  document?.documentElement?.style.setProperty("--blur-val", blurVal);
 }
 
 function settingsInitializer(defaultSettings: Settings): Settings {
@@ -70,8 +64,6 @@ function settingsInitializer(defaultSettings: Settings): Settings {
     (localStorage?.getItem("RPW_AUDIO") as AudioState) || audio;
   const savedBlurState =
     (localStorage?.getItem("RPW_BLUR") as BlurState) || blur;
-
-  setDocumentBlurValue(savedBlurState);
 
   return {
     blur: savedBlurState,
@@ -116,7 +108,14 @@ export function SettingsProvider({ children }: SettingsProviderProps) {
 
   return (
     <SettingsContext.Provider value={value}>
-      {children}
+      <div
+        className="h-full default-bg"
+        style={{
+          filter: settings.blur === "ENABLED" ? "blur(1px)" : "blur(0px)",
+        }}
+      >
+        {children}
+      </div>
     </SettingsContext.Provider>
   );
 }
