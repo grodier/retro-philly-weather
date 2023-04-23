@@ -1,6 +1,6 @@
 import musicUrl from "../assets/stardust.mp3";
 import { useLocalDate } from "./LocalDate";
-import { Cog6ToothIcon, Cog8ToothIcon } from "@heroicons/react/24/solid";
+import { Cog8ToothIcon } from "@heroicons/react/24/solid";
 import { Link } from "@remix-run/react";
 
 type WS4000Props = {

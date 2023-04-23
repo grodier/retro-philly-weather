@@ -1,9 +1,13 @@
 import React from "react";
 
+type AudioState = "ENABLED" | "DISABLED";
+type BlurState = "ENABLED" | "DISABLED";
+type PlayerState = "IDLE" | "PLAYING";
+
 type Settings = {
-  player: "IDLE" | "PLAYING";
-  audio: "ENABLED" | "DISABLED";
-  blur: "ENABLED" | "DISABLED";
+  player: PlayerState;
+  audio: AudioState;
+  blur: BlurState;
 };
 
 type SettingsContext = {
@@ -34,13 +38,14 @@ function settingsReducer(
   switch (action.type) {
     case SettingsActions.TOGGLE_AUDIO: {
       const audioEnabled = state.audio === "ENABLED";
+      localStorage.setItem("RPW_AUDIO", audioEnabled ? "DISABLED" : "ENABLED");
       return { ...state, audio: audioEnabled ? "DISABLED" : "ENABLED" };
     }
     case SettingsActions.TOGGLE_BLUR: {
-      const blurEnabled = state.blur === "ENABLED";
-      const blurVal = blurEnabled ? "0px" : "1px";
-      document.documentElement.style.setProperty("--blur-val", blurVal);
-      return { ...state, blur: blurEnabled ? "DISABLED" : "ENABLED" };
+      const updatedBlur = state.blur === "ENABLED" ? "DISABLED" : "ENABLED";
+      localStorage.setItem("RPW_BLUR", updatedBlur);
+      setDocumentBlurValue(updatedBlur);
+      return { ...state, blur: updatedBlur };
     }
     case SettingsActions.START_PLAYER: {
       return { ...state, player: "PLAYING" };
@@ -50,16 +55,45 @@ function settingsReducer(
   }
 }
 
+function setDocumentBlurValue(blur: BlurState) {
+  const blurVal = blur === "ENABLED" ? "1px" : "0px";
+  document?.documentElement?.style.setProperty("--blur-val", blurVal);
+}
+
+function settingsInitializer(defaultSettings: Settings): Settings {
+  const { blur, player, audio } = defaultSettings;
+  if (typeof localStorage === "undefined") {
+    return defaultSettings;
+  }
+
+  const savedAudioState =
+    (localStorage?.getItem("RPW_AUDIO") as AudioState) || audio;
+  const savedBlurState =
+    (localStorage?.getItem("RPW_BLUR") as BlurState) || blur;
+
+  setDocumentBlurValue(savedBlurState);
+
+  return {
+    blur: savedBlurState,
+    audio: savedAudioState,
+    player,
+  };
+}
+
 type SettingsProviderProps = {
   children: React.ReactNode;
 };
 
 export function SettingsProvider({ children }: SettingsProviderProps) {
-  const [settings, dispatch] = React.useReducer(settingsReducer, {
-    player: "IDLE",
-    audio: "ENABLED",
-    blur: "ENABLED",
-  });
+  const [settings, dispatch] = React.useReducer(
+    settingsReducer,
+    {
+      player: "IDLE",
+      audio: "ENABLED",
+      blur: "ENABLED",
+    },
+    settingsInitializer
+  );
 
   function toggle_audio() {
     dispatch({ type: SettingsActions.TOGGLE_AUDIO });

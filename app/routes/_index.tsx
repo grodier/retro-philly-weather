@@ -44,8 +44,7 @@ export default function Index() {
               <div className="flex flex-col items-center space-y-2">
                 <p className="text-sm text-center text-gray-700">
                   (Note: For best retro experience consider using a laptop or
-                  desktop. Check out the settings to turn off audio or reduce
-                  blur)
+                  desktop. Use the settings to control audio and blur effect.)
                 </p>
                 <Link
                   className="font-semibold text-blue-800 hover:text-indigo-600 underline"
