@@ -12,7 +12,10 @@ import type { LinksFunction } from "@remix-run/node";
 import styles from "./tailwind.css";
 import { SettingsProvider } from "./components/SettingsProvider";
 
-export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+export const links: LinksFunction = () => [
+  { rel: "icon", type: "image/svg.xml", href: "favicon.svg" },
+  { rel: "stylesheet", href: styles },
+];
 
 export default function App() {
   return (
