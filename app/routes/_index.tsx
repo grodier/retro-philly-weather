@@ -1,6 +1,6 @@
 import { V2_MetaFunction, json } from "@remix-run/node";
 import { useLoaderData, Link } from "@remix-run/react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useSettings } from "~/components/SettingsProvider";
 import WS4000 from "~/components/WS4000";
 import { get_current_conditions } from "~/weather-data";
@@ -18,8 +18,13 @@ export async function loader() {
 
 export default function Index() {
   const { settings, start_player } = useSettings();
-  const [overlayVisible, setOverlayVisible] = useState(true);
+  const audioRef = useRef<HTMLAudioElement>(null);
   const weatherStarData = useLoaderData<typeof loader>();
+
+  function start_ws4000() {
+    start_player();
+    audioRef.current?.play();
+  }
 
   return (
     <div className="font-mono">
@@ -37,7 +42,7 @@ export default function Index() {
               </p>
               <button
                 className="logo max-w-fit bg-white bg-gradient-to-b from-blue-800 to-blue-400 hover:from-blue-900 hover:to-blue-500 active:from-blue-700 active:to-blue-300 text-outline-3d-small text-white text-3xl font-bold rounded-2xl p-2 border-4 border-white inline-block"
-                onClick={start_player}
+                onClick={start_ws4000}
               >
                 <div className="flex flex-col uppercase items-center">Play</div>
               </button>
@@ -59,6 +64,7 @@ export default function Index() {
       </div>
       <div className={settings.player === "PLAYING" ? "" : "blur"}>
         <WS4000
+          audioRef={audioRef}
           sound={settings.player === "PLAYING" && settings.audio === "ENABLED"}
           currentConditions={{ ...weatherStarData.currentConditions }}
         />

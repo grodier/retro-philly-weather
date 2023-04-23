@@ -5,6 +5,7 @@ import { Link } from "@remix-run/react";
 
 type WS4000Props = {
   sound: boolean;
+  audioRef: React.RefObject<HTMLAudioElement>;
   currentConditions: {
     temperature?: string;
     dew_point?: string;
@@ -21,7 +22,11 @@ type WS4000Props = {
   };
 };
 
-export default function WS4000({ sound, currentConditions }: WS4000Props) {
+export default function WS4000({
+  audioRef,
+  sound,
+  currentConditions,
+}: WS4000Props) {
   const date = useLocalDate();
 
   return (
@@ -30,7 +35,7 @@ export default function WS4000({ sound, currentConditions }: WS4000Props) {
         <span className="sr-only">Settings</span>
         <Cog8ToothIcon className="h-14 lg:h-16 w-14 lg:w-16 p-2 text-gray-400 hover:text-gray-300 absolute top-0 right-0" />
       </Link>
-      <audio autoPlay muted={!sound} loop src={musicUrl} />
+      <audio autoPlay muted={!sound} loop src={musicUrl} ref={audioRef} />
       <header className="mt-10 pt-8 pb-2 px-4 sm:px-8">
         <div className="container mx-auto flex flex-wrap-reverse sm:flex-nowrap">
           <div className="logo-expanded bg-white bg-gradient-to-b from-blue-800 to-blue-400 text-outline-3d-small text-white text-xl sm:text-2xl lg:text-3xl font-bold rounded-2xl p-2 border-2 sm:border-4 border-white inline-block">
