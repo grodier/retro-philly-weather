@@ -24,6 +24,23 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta
+          property="og:description"
+          content="Get the local Philadelphia weather with a retro style"
+        />
+        <meta property="og:site_name" content="Retro Philly Weather" />
+        <meta property="og:title" content="Retro Philly Weather" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://retrophillyweather.com/" />
+        <meta
+          property="og:image"
+          content="https://retrophillyweather.com/assets/og-img.jpg"
+        />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:image"
+          content="https://retrophillyweather.com/assets/og-img.jpg"
+        />
         <Meta />
         <Links />
       </head>

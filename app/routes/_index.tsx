@@ -1,6 +1,6 @@
 import { V2_MetaFunction, json } from "@remix-run/node";
 import { useLoaderData, Link } from "@remix-run/react";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useSettings } from "~/components/SettingsProvider";
 import WS4000 from "~/components/WS4000";
 import { get_current_conditions } from "~/weather-data";
