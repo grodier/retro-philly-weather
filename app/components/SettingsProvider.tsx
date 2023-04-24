@@ -109,7 +109,7 @@ export function SettingsProvider({ children }: SettingsProviderProps) {
   return (
     <SettingsContext.Provider value={value}>
       <div
-        className="h-full default-bg"
+        className="h-full"
         style={{
           filter: settings.blur === "ENABLED" ? "blur(1px)" : "blur(0px)",
         }}
