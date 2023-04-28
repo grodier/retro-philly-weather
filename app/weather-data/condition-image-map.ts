@@ -73,117 +73,117 @@ export function getDescriptionImage(
     case "blowing sand":
       return "/assets/Windy.gif";
 
-    case "Ice Crystals":
-    case "Areas Ice Crystals":
-    case "Patchy Ice Crystals":
-    case "Sleet":
-    case "Slight Chance Sleet":
-    case "Chance Sleet":
-    case "Sleet Likely ":
+    case "ice crystals":
+    case "areas ice crystals":
+    case "patchy ice crystals":
+    case "sleet":
+    case "slight chance sleet":
+    case "chance sleet":
+    case "sleet likely ":
       return "/assets/Sleet.gif";
 
-    case "Freezing Spray":
-    case "Freezing Rain":
-    case "Slight Chance Freezing Rain":
-    case "Chance Freezing Rain":
-    case "Freezing Rain Likely":
-    case "Freezing Drizzle":
-    case "Freezing Drizzle Likely":
-    case "Chance Freezing Drizzle":
-    case "Slight Chance Freezing Drizzle":
-    case "Slight Chance Rain/Freezing Rain":
-    case "Chance Rain/Freezing Rain":
+    case "freezing spray":
+    case "freezing rain":
+    case "slight chance freezing rain":
+    case "chance freezing rain":
+    case "freezing rain likely":
+    case "freezing drizzle":
+    case "freezing drizzle likely":
+    case "chance freezing drizzle":
+    case "slight chance freezing drizzle":
+    case "slight chance rain/freezing rain":
+    case "chance rain/freezing rain":
     case "rain/freezing rain likely":
-    case "Rain/Freezing Rain":
+    case "rain/freezing rain":
       return "/assets/Freezing-Rain.gif";
 
-    case "Slight Chance Rain Showers":
-    case "Chance Rain Showers":
-    case "Slight Chance Rain":
-    case "Chance Rain":
+    case "slight Chance Rain Showers":
+    case "chance Rain Showers":
+    case "slight Chance Rain":
+    case "chance Rain":
       return "/assets/Scattered-Showers.gif";
 
-    case "Showers":
-    case "Showers Likely":
-    case "Rain Showers Likely":
-    case "Rain Showers":
-    case "Slight Chance Drizzle":
-    case "Chance Drizzle":
-    case "Drizzle Likely":
-    case "Light Drizzle":
-    case "Light Drizzle Fog":
-    case "Drizzle":
-    case "Drizzle Fog":
-    case "Light Rain":
-    case "Light Rain Fog":
-    case "Light Rain Fog/Mist":
-    case "Lt Rain":
-    case "Lt Rain Fog":
-    case "Lt Rain, Fog":
-    case "Drizzle Patchy Fog":
+    case "showers":
+    case "showers likely":
+    case "rain showers likely":
+    case "rain showers":
+    case "slight chance drizzle":
+    case "chance drizzle":
+    case "drizzle likely":
+    case "light drizzle":
+    case "light drizzle fog":
+    case "drizzle":
+    case "drizzle fog":
+    case "light rain":
+    case "light rain fog":
+    case "light rain fog/mist":
+    case "lt rain":
+    case "lt rain fog":
+    case "lt rain, fog":
+    case "drizzle patchy fog":
     case "rain and fog/mist":
       return "/assets/Shower.gif";
 
-    case "Rain Likely":
-    case "Rain":
-    case "Heavy Rain":
+    case "rain likely":
+    case "rain":
+    case "heavy rain":
       return "/assets/Rain.gif";
 
-    case "Isolated Snow":
-    case "Slight Chance Snow Showers":
-    case "Chance Snow Showers":
-    case "Slight Chance Flurries":
-    case "Flurries Likely":
-    case "Flurries":
-    case "Slight Chance Snow":
-    case "Scattered Flurries":
+    case "isolated snow":
+    case "slight chance snow showers":
+    case "chance snow showers":
+    case "slight chance flurries":
+    case "flurries likely":
+    case "flurries":
+    case "slight chance snow":
+    case "scattered flurries":
       return "/assets/Scattered-Snow-Showers.gif";
 
-    case "Snow Showers Likely":
-    case "Snow Showers":
-    case "Chance Flurries":
-    case "Chance Snow":
-    case "Light Snow":
-    case "Lt Snow":
-    case "Light Snow Fog/Mist":
-    case "Lt Snow, Fog":
+    case "snow showers likely":
+    case "snow showers":
+    case "chance flurries":
+    case "chance snow":
+    case "light snow":
+    case "lt snow":
+    case "light snow fog/mist":
+    case "lt snow, fog":
       return "/assets/Light-Snow.gif";
 
-    case "Snow Likely":
-    case "Snow":
-    case "Blizzard":
+    case "snow likely":
+    case "snow":
+    case "blizzard":
       return "/assets/Heavy-Snow.gif";
 
-    case "Rain/Snow":
-    case "Slight Chance Rain/Snow":
-    case "Chance Rain/Snow":
-    case "Rain/Snow Likely":
+    case "rain/snow":
+    case "slight chance rain/snow":
+    case "chance rain/snow":
+    case "rain/snow likely":
       return "/assets/Rain-Snow.gif";
 
-    case "Slight Chance Wintry Mix":
-    case "Chance Wintry Mix":
-    case "Wintry Mix Likely":
-    case "Wintry Mix":
+    case "slight chance wintry mix":
+    case "chance wintry mix":
+    case "wintry mix likely":
+    case "wintry mix":
       return "/assets/Wintry-Mix.gif";
 
-    case "Slight Chance Rain/Sleet":
-    case "Chance Rain/Sleet":
-    case "Rain/Sleet Likely":
-    case "Rain/Sleet":
-    case "Slight Chance Snow/Sleet":
-    case "Chance Snow/Sleet":
-    case "Snow/Sleet Likely":
-    case "Snow/Sleet":
+    case "slight chance rain/sleet":
+    case "chance rain/sleet":
+    case "rain/sleet likely":
+    case "rain/sleet":
+    case "slight chance snow/sleet":
+    case "chance snow/sleet":
+    case "snow/sleet likely":
+    case "snow/sleet":
       return "/assets/Freezing-Rain-Sleet.gif";
 
-    case "Isolated Thunderstorms":
-    case "Thunderstorms Likely":
-    case "Thunderstorms":
-    case "Severe Tstms":
+    case "isolated thunderstorms":
+    case "thunderstorms likely":
+    case "thunderstorms":
+    case "severe tstms":
       return "/assets/Thunderstorm.gif";
 
-    case "Slight Chance Thunderstorms":
-    case "Chance Thunderstorms":
+    case "slight chance thunderstorms":
+    case "chance thunderstorms":
       return "/assets/Scatterd-Tstorms.gif";
 
     default:
