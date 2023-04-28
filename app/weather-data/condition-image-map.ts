@@ -121,6 +121,7 @@ export function getDescriptionImage(
     case "Lt Rain Fog":
     case "Lt Rain, Fog":
     case "Drizzle Patchy Fog":
+    case "Rain and Fog/Mist":
       return "/assets/Shower.gif";
 
     case "Rain Likely":
