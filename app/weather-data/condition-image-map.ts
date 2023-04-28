@@ -65,12 +65,12 @@ export function getDescriptionImage(
     case "blowing snow":
       return "/assets/Blowing-Snow.gif";
 
-    case "Windy":
-    case "Breezy":
-    case "Blustery":
-    case "Water Spouts":
-    case "Blowing Dust":
-    case "Blowing Sand":
+    case "windy":
+    case "breezy":
+    case "blustery":
+    case "water spouts":
+    case "blowing dust":
+    case "blowing sand":
       return "/assets/Windy.gif";
 
     case "Ice Crystals":
@@ -93,7 +93,7 @@ export function getDescriptionImage(
     case "Slight Chance Freezing Drizzle":
     case "Slight Chance Rain/Freezing Rain":
     case "Chance Rain/Freezing Rain":
-    case "Rain/Freezing Rain Likely":
+    case "rain/freezing rain likely":
     case "Rain/Freezing Rain":
       return "/assets/Freezing-Rain.gif";
 
@@ -121,7 +121,7 @@ export function getDescriptionImage(
     case "Lt Rain Fog":
     case "Lt Rain, Fog":
     case "Drizzle Patchy Fog":
-    case "Rain and Fog/Mist":
+    case "rain and fog/mist":
       return "/assets/Shower.gif";
 
     case "Rain Likely":
