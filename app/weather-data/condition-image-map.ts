@@ -117,6 +117,7 @@ export function getDescriptionImage(
     case "light rain":
     case "light rain fog":
     case "light rain fog/mist":
+    case "light rain and fog/mist":
     case "lt rain":
     case "lt rain fog":
     case "lt rain, fog":
